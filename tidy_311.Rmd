@@ -32,6 +32,9 @@ nyccomplaints %>%
 ```
 
 ```{r}
+finalversion <- nyccomplaints %>%
+  separate(Location, into = c("Point", "Longitude", "Latitude"), sep = " ") %>% separate(Incident_Address, into = c("House Number", "Street Name"), sep = " ") %>% separate(Created_Date, into = c("Date", "Time"), sep = " ")
+head(finalversion)
 ```
 
 
