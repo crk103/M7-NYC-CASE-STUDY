@@ -25,12 +25,24 @@ summary(nyccomplaints)
 This data is missing values
 The location is all together and not seperated between longitude and latitude
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+# tidying messy data
+```{r}
+nyccomplaints %>%
+  separate(Location, into = c("Point", "Longitude", "Latitude"), sep = " ")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+```
+
+
+```{r}
+nyccomplaints %>%
+  separate(Incident_Address, into = c("House Number", "Street Name"), sep = " ")
+```
+
+```{r}
+nyccomplaints %>%
+  separate(Created_Date, into = c("Date", "Time"), sep = " ")
+```
+
+
